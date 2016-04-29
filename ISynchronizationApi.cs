@@ -6,8 +6,12 @@ namespace RAFQuesting.Api
     [ServiceContract]
     interface ISynchronizationApi {
         [OperationContract]
-        bool Initialize(int id);
-        [OperationContract(IsOneWay = true)]
-        void Heartbeat(int id);
+        bool initialize(int id);
+        [OperationContract/*(IsOneWay = true)*/]
+        bool heartbeat(int id);
+        [OperationContract]
+        bool canTurnIn(int id, int questId);
+        [OperationContract]
+        bool canContinueQuesting(int id);
     }
 }

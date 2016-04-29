@@ -10,8 +10,7 @@ namespace RAFQuesting.Api
         public bool initialize(int id) {
             if (RAFQuestingMain.clients.ContainsKey(id)) //Something went wrong, we already have this HB pid registered
                 return false;
-            Client client = new Client();
-            RAFQuestingMain.clients.Add(id, client);
+            RAFQuestingMain.clients.Add(id, new Client());
             return true;
         }
 
